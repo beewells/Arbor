@@ -12,11 +12,8 @@ import { useFonts } from "expo-font";
 
 const Memories = ({navigation}) => {
   let [fontsLoaded] = useFonts({
-    Bold: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf"),
-    Medium: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Medium.ttf"),
-    Regular: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf"),
-    Semi: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-SemiBold.ttf"),
-    Original: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
+    "Regular": require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf"),
+    "Original": require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
   });
 
   const navigateToMailFinal = () => {
@@ -24,8 +21,23 @@ const Memories = ({navigation}) => {
   };
 
   const navigateToMailMemory = () => {  
-    navigation.navigate('MailMemory');
+    navigation.navigate('BeachMemory');
   };
+
+  const navigateToKoreaTrip = () => {
+    navigation.navigate('KoreaMemory');
+  }
+
+  const navigateToAteez = () => {
+    navigation.navigate('AteezMemory');
+  }
+
+  const navigateToFrance = () => {
+    navigation.navigate('FranceMemory');
+  }
+  const navigateToSF = () => {
+    navigation.navigate('SFMemory');
+  }
   const [exitButtonImage, setExitButtonImage] = useState(require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/Cancel.png"));
 
   const exitButtonImages = [
@@ -42,7 +54,7 @@ const Memories = ({navigation}) => {
 
     // Navigate to the new page after a brief delay
     setTimeout(() => {
-      navigation.navigate('Town');
+      navigation.navigate('TownMailTutorial');
     }, 200);
   };
 
@@ -90,11 +102,14 @@ const Memories = ({navigation}) => {
               </View>
               <Text style = {styles.boxText}> Korea Trip </Text>
               <View style = {styles.stack}>
+                
+                <TouchableOpacity activeOpacity={1} onPress={navigateToKoreaTrip}>
                 <View style = {styles.smallOutline}>
                   <View style = {styles.smallInterior}>
                     <Text style = {styles.innerText}> View </Text>
                   </View>
                 </View>
+              </TouchableOpacity>
 
               <TouchableOpacity activeOpacity={1} onPress={navigateToMailFinal}>
                 <View style = {styles.smallOutline}>
@@ -115,11 +130,15 @@ const Memories = ({navigation}) => {
               </View>
               <Text style = {styles.boxText}> ATEEZ!! </Text>
               <View style = {styles.stack}>
+                
+              <TouchableOpacity activeOpacity={1} onPress={navigateToAteez}>
                 <View style = {styles.smallOutline}>
                   <View style = {styles.smallInterior}>
                     <Text style = {styles.innerText}> View </Text>
                   </View>
                 </View>
+              </TouchableOpacity>
+
 
                 <TouchableOpacity activeOpacity={1} onPress={navigateToMailFinal}>
                 <View style = {styles.smallOutline}>
@@ -138,11 +157,14 @@ const Memories = ({navigation}) => {
               </View>
               <Text style = {styles.boxText}> Oui Oui! </Text>
               <View style = {styles.stack}>
+              <TouchableOpacity activeOpacity={1} onPress={navigateToFrance}>
                 <View style = {styles.smallOutline}>
                   <View style = {styles.smallInterior}>
                     <Text style = {styles.innerText}> View </Text>
                   </View>
                 </View>
+              </TouchableOpacity>
+
 
                 <TouchableOpacity activeOpacity={1} onPress={navigateToMailFinal}>
                   <View style = {styles.smallOutline}>
@@ -161,11 +183,14 @@ const Memories = ({navigation}) => {
               </View>
               <Text style = {styles.boxText}> A Day in SF!! </Text>
               <View style = {styles.stack}>
+              <TouchableOpacity activeOpacity={1} onPress={navigateToSF}>
                 <View style = {styles.smallOutline}>
                   <View style = {styles.smallInterior}>
                     <Text style = {styles.innerText}> View </Text>
                   </View>
                 </View>
+              </TouchableOpacity>
+
 
                 <TouchableOpacity activeOpacity={1} onPress={navigateToMailFinal}>
                   <View style = {styles.smallOutline}>
@@ -237,7 +262,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   buttonText: {
-    fontFamily: "Semi",
+    fontFamily: 'Regular',
     marginTop: 8,
     fontSize: 28, 
   },
@@ -276,7 +301,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft: 55,
     paddingBottom: 10,
-    fontFamily: 'Regular',
+    fontFamily: "Regular",
     fontSize: 25,
   },
   smallOutline: {
@@ -309,7 +334,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     textAlign: 'center',
     fontSize: 20,
-    fontFamily: 'Semi',
+    fontFamily: "Regular",
   },
   footer: {
     height: 70,
@@ -318,7 +343,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   innerText: {
-    fontFamily: 'Bold',
+    fontFamily: "Regular",
     fontSize: 20,
     alignItems: 'center',
     justifyContent: 'center',

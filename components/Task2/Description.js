@@ -3,14 +3,17 @@ import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, Image, TextI
 import { useFonts } from 'expo-font';
 
 
-const Description = ( {navigation} ) => {
+const Description = ( {route, navigation} ) => {
   let [fontsLoaded] = useFonts({
     'Regular': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf'),
     'Original': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf'),
   });
 
+  const memoryName = route.params ? route.params.memoryName : '';
+  const selectedMedia = route.params ? route.params.selectedMedia : '';
+
   const navigateToPeople = () => {
-    navigation.navigate('People');
+    navigation.navigate('People', { description: description, memoryName: memoryName, selectedMedia: selectedMedia});
   };
 
   const navigateToCreateStart = () => {

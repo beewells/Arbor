@@ -2,29 +2,21 @@ import React, { useState } from 'react';
 import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, Image, ScrollView } from 'react-native';
 import { useFonts } from 'expo-font';
 
-
-
-const Review = ( {route, navigation} ) => {
-  const emotions = route.params ? route.params.emotions : 'No information provided.';
-  const people = route.params ? route.params.people : 'No information provided.';
-  const description = route.params ? route.params.description : 'No information provided.';
-  const memoryName = route.params ? route.params.memoryName : 'No information provided.';
-  const selectedMedia = route.params ? route.params.selectedMedia : 'No information provided.';
-
+const FullMemory = ( {navigation} ) => {
   let [fontsLoaded] = useFonts({
-    'Regular': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf'),
+    'Regular': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf'),
     'Original': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf'),
   });
 
-  const navigateToGardenRightTaskComplete = () => {
-    navigation.navigate('GardenRightTaskComplete');
+  const navigateToEat = () => {
+    navigation.navigate('Memories');
   };
 
-  const [exitButtonImage, setExitButtonImage] = useState(require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/back_0.png"));
+  const [exitButtonImage, setExitButtonImage] = useState(require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/Cancel.png"));
 
   const exitButtonImages = [
-    require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/back_0.png"),
-    require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/back_1.png"),
+    require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/Cancel.png"),
+    require("/Users/blainekwells/Desktop/Arbor/assets/images/Icons/CancelPressed.png"),
   ];
 
   const handleExitPress = () => {
@@ -36,17 +28,13 @@ const Review = ( {route, navigation} ) => {
 
     // Navigate to the new page after a brief delay
     setTimeout(() => {
-      navigation.navigate('SeedSelection');
+      navigation.navigate('Memories');
     }, 200);
   };
 
-  const images = [
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box13.png'),
-  ];
-
   return (
   
-<ImageBackground
+    <ImageBackground
     source={require('/Users/blainekwells/Desktop/Arbor/assets/images/Backgrounds/LongBackpack.png')}
     style={styles.container}
     resizeMode="cover"
@@ -60,14 +48,14 @@ const Review = ( {route, navigation} ) => {
         </TouchableOpacity>
     </View>
 
-    <Text style = {styles.title}> {memoryName} </Text>
+    <Text style = {styles.title}> ATEEZ!!</Text>
 
     <View style = {styles.scroll}>
     <ScrollView>
         <Text style = {styles.descriptor}> Photo </Text>
         <View style = {styles.outline}>
                 <View style = {styles.background}>
-                    <Image style = {styles.picture} source = {{uri: selectedMedia}} />
+                    <Image style = {styles.picture} source = {require('/Users/blainekwells/Desktop/Arbor/assets/images/Stock/Lightstick.jpeg')} />
                 </View>
         </View>
 
@@ -75,7 +63,7 @@ const Review = ( {route, navigation} ) => {
         <View style = {styles.outline}>
                 <View style = {styles.textBackground}>
                     <Text style = {styles.words}> 
-                        { description }
+                    The ATEEZ concert was an electrifying experience, filled with vibrant lights and the powerful, resonating beats of their hit songs!
                     </Text>
                 </View>
         </View>
@@ -84,7 +72,16 @@ const Review = ( {route, navigation} ) => {
         <View style = {styles.outline}>
                 <View style = {styles.textBackground}>
                     <Text style = {styles.words}> 
-                        {people}
+                        * Isabella
+                    </Text>
+                    <Text style = {styles.words}> 
+                        * Ethan
+                    </Text>
+                    <Text style = {styles.words}> 
+                        * Zoe
+                    </Text>
+                    <Text style = {styles.words}> 
+                        * Liam
                     </Text>
                 </View>
         </View>
@@ -93,7 +90,10 @@ const Review = ( {route, navigation} ) => {
         <View style = {styles.outline}>
                 <View style = {styles.textBackground}>
                     <Text style = {styles.words}> 
-                        {emotions}
+                        * Joy - Energized by the vibrant, pulsating music.
+                    </Text>
+                    <Text style = {styles.words}> 
+                        * Nostalgia - Reminiscing the journey and growth with ATEEZ's music.
                     </Text>
                 </View>
         </View>
@@ -107,10 +107,10 @@ const Review = ( {route, navigation} ) => {
     </ScrollView>
     </View>
     
-    <TouchableOpacity activeOpacity={1} onPress={navigateToGardenRightTaskComplete}>
+    <TouchableOpacity activeOpacity={1} onPress={navigateToEat}>
         <View style = {styles.eatOutline}>
             <View style = {styles.eatBackground}>
-                <Text style = {styles.eat}> Plant </Text>
+                <Text style = {styles.eat}> Back </Text>
             </View>
         </View>
     </TouchableOpacity>
@@ -277,5 +277,5 @@ const styles = StyleSheet.create({
 
 });
 
-export default Review;
+export default FullMemory;
 

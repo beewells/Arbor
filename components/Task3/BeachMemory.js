@@ -4,7 +4,7 @@ import { useFonts } from 'expo-font';
 
 const FullMemory = ( {navigation} ) => {
   let [fontsLoaded] = useFonts({
-    'Regular': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf'),
+    'Regular': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf'),
     'Original': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf'),
   });
 
@@ -28,7 +28,7 @@ const FullMemory = ( {navigation} ) => {
 
     // Navigate to the new page after a brief delay
     setTimeout(() => {
-      navigation.navigate('GardenLeft');
+      navigation.navigate('Memories');
     }, 200);
   };
 

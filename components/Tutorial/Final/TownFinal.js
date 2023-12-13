@@ -26,20 +26,25 @@ const Town = ({navigation}) => {
   }
 
   navigateToGardenLeftSolo = () => {
-    navigation.navigate('GardenLeftSolo');
+    navigation.navigate('GardenLeftFinal');
   }
 
   navigateToGardenRight = () => {
-    navigation.navigate('GardenRight');
+    navigation.navigate('GardenRightFinal');
   }
 
   navigateToMarket = () => {
     navigation.navigate('Market')
   }
   const images = [
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box20.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box21.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box22.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box31.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box32.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box33.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box34.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box35.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box36.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box37.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box38.png'),
 
   ];
 

@@ -3,15 +3,19 @@ import { ImageBackground, StyleSheet, Text, View, TouchableOpacity, Image, TextI
 import { useFonts } from 'expo-font';
 
 
-const People = ( {navigation} ) => {
+const People = ( {route, navigation} ) => {
   let [fontsLoaded] = useFonts({
     'Regular': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf'),
     'Original': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf'),
   });
 
+  const description = route.params ? route.params.description : '';
+  const memoryName = route.params ? route.params.memoryName : '';
+  const selectedMedia = route.params ? route.params.selectedMedia : '';
+
   // next screen
   const navigateToEmotions = () => {
-    navigation.navigate('Emotions');
+    navigation.navigate('Emotions', {people: people, description: description, memoryName: memoryName, selectedMedia: selectedMedia});
   };
 
   // previous screen

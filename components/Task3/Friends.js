@@ -12,11 +12,8 @@ import { useFonts } from "expo-font";
 
 const Friends = ({navigation}) => {
   let [fontsLoaded] = useFonts({
-    Bold: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf"),
-    Medium: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Medium.ttf"),
-    Regular: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf"),
-    Semi: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-SemiBold.ttf"),
-    Original: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
+    "Regular": require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf"),
+    "Original": require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
   });
 
   const navigateToMemories = () => {
@@ -39,7 +36,7 @@ const Friends = ({navigation}) => {
 
     // Navigate to the new page after a brief delay
     setTimeout(() => {
-      navigation.navigate('Town');
+      navigation.navigate('TownMailTutorial');
     }, 200);
   };
 
@@ -213,7 +210,7 @@ const styles = StyleSheet.create({
   heading: {
     flex: 1,
     alignItems: "center",
-    fontFamily: "Semi",
+    fontFamily: "Regular",
     fontSize: 60,
     paddingTop: 20,
     paddingLeft: 30,
@@ -232,7 +229,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   toText: {
-    fontFamily: "Bold",
+    fontFamily: "Original",
     fontSize: 30,
     textAlign: 'center',
   },
@@ -266,7 +263,7 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   profileName: {
-    fontFamily: 'Medium',
+    fontFamily: "Regular",
     fontSize: 25,
   },
   smallOutline: {
@@ -295,7 +292,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonText: {
-    fontFamily: "Semi",
+    fontFamily: "Regular",
     marginTop: 8,
     fontSize: 17, 
   },
@@ -310,7 +307,7 @@ const styles = StyleSheet.create({
     paddingTop: 10,
     textAlign: 'center',
     fontSize: 20,
-    fontFamily: 'Semi',
+    fontFamily: 'Regular',
   },
   footer: {
     height: 70,

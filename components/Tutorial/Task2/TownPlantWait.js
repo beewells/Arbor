@@ -16,6 +16,7 @@ const Town = ({navigation}) => {
     Original: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
   });
 
+  //const { isNotificationVisible } = useContent(VisibilityContext);
   const navigateToNewMail = () => {
     navigation.navigate('NewMail');
   };
@@ -24,39 +25,22 @@ const Town = ({navigation}) => {
     navigation.navigate('CreateStart');
   }
 
-  navigateToGardenLeft = () => {
+  navigateToGardenLeftSolo = () => {
     navigation.navigate('GardenLeftSolo');
   }
 
   navigateToGardenRight = () => {
-    navigation.navigate('GardenRightSolo');
+    navigation.navigate('GardenRight');
   }
+
   navigateToMarket = () => {
-    navigation.navigate('Market');
+    navigation.navigate('Market')
   }
 
-  const images = [
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box17.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box18.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box19.png'),
-  ];
-
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [endOfImages, setEndOfImages] = useState(false);
-
-  const handleImageChange = () => {
-    if (currentImageIndex < images.length -1) {
-      setCurrentImageIndex(currentImageIndex + 1);
-    } else {
-      setEndOfImages(true);
-    }
-  };
 
   return (
     <ImageBackground style={styles.container} source = {require('/Users/blainekwells/Desktop/Arbor/assets/images/Backgrounds/TownBackground.jpg')} resizeMode="cover">
-      <TouchableOpacity activeOpacity = {1} onPress = {navigateToMarket}>
-        <Image style = {styles.market} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Market.gif')} />
-      </TouchableOpacity>
+      <Image style = {styles.market} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Market.gif')} />
         <Image style = {styles.house} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/House.gif')} />
       <TouchableOpacity activeOpacity = {1} onPress = {navigateToNewMail}>
         <Image style = {styles.office} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Office.gif')}/>
@@ -67,7 +51,7 @@ const Town = ({navigation}) => {
       <Image style = {styles.farmer} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/OldMan.gif')}/>
       <Image style = {styles.base} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Base.gif')}/>
 
-      <TouchableOpacity activeOpacity = {1} onPress = {navigateToGardenLeft}>
+      <TouchableOpacity activeOpacity = {1} onPress = {navigateToGardenLeftSolo}>
         <Image style = {styles.gardenLeft} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Left.gif')}/>
       </TouchableOpacity>
 
@@ -75,15 +59,6 @@ const Town = ({navigation}) => {
         <Image style = {styles.gardenRight} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Right.gif')}/>
       </TouchableOpacity>
 
-      {!endOfImages && (
-        <TouchableOpacity onPress={handleImageChange} style={styles.cyclingImage}>
-        <Image
-          style={styles.cyclingImage}
-          source={images[currentImageIndex]}
-        />
-      </TouchableOpacity>
-      )}
-      
     </ImageBackground>
   );
 };
@@ -98,6 +73,7 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       paddingTop: 100,
       position: 'relative',
+    
     },
     house: {
       height: 200,
@@ -130,11 +106,11 @@ const styles = StyleSheet.create({
       top: -10,
     },
     farmer: {
-      height: 90,
-      width: 90,
+      height: 95,
+      width: 95,
       zIndex: 2,
-      bottom: 695,
-      left: 60,
+      bottom: 520,
+      left: 35,
       position: 'relative',
     },
     left: {
@@ -152,17 +128,18 @@ const styles = StyleSheet.create({
       left: 160,
     },
     base: {
-      height: 90,
-      width: 90,
+      height: 95,
+      width: 95,
       zIndex: 2,
-      bottom: 600,
+      bottom: 612,
+      right: 45,
       position: 'relative',
     },
     gardenLeft: {
       height: 80,
       width: 80,
       zIndex: 2,
-      bottom: 637,
+      bottom: 645,
       right: 160,
       position: 'relative',
     },
@@ -170,8 +147,16 @@ const styles = StyleSheet.create({
       height: 80,
       width: 80,
       zIndex: 2,
-      bottom: 725,
+      bottom: 730,
       left: 160,
+      position: 'relative',
+    },
+    notification: {
+      height: 90,
+      width: 90,
+      zIndex: 2,
+      bottom: 920,
+      right: 156,
       position: 'relative',
     },
     cyclingImage: {
@@ -179,7 +164,7 @@ const styles = StyleSheet.create({
       width: 300,  
       position: 'absolute',
       zIndex: 20,
-      top: 225,
+      top: 90,
     },
 });
 

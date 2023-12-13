@@ -12,10 +12,7 @@ import { useFonts } from "expo-font";
 
 const MailFinal= ({navigation}) => {
   let [fontsLoaded] = useFonts({
-    Bold: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf"),
-    Medium: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Medium.ttf"),
-    Regular: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Regular.ttf"),
-    Semi: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-SemiBold.ttf"),
+    Regular: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/PixelifySans-Bold.ttf"),
     Original: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
   });
 
@@ -39,7 +36,7 @@ const MailFinal= ({navigation}) => {
 
     // Navigate to the new page after a brief delay
     setTimeout(() => {
-      navigation.navigate('Town');
+      navigation.navigate('TownFinal');
     }, 200);
   };
 
@@ -88,7 +85,7 @@ const styles = StyleSheet.create({
     },
     heading: {
         paddingTop: 80,
-        fontFamily: "Semi",
+        fontFamily: "Regular",
         fontSize: 50,
         textAlign: 'center',
     },

@@ -16,7 +16,6 @@ const Town = ({navigation}) => {
     Original: require("/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf"),
   });
 
-  //const { isNotificationVisible } = useContent(VisibilityContext);
   const navigateToNewMail = () => {
     navigation.navigate('NewMail');
   };
@@ -25,27 +24,21 @@ const Town = ({navigation}) => {
     navigation.navigate('CreateStart');
   }
 
-  navigateToGardenLeftSolo = () => {
+  navigateToGardenLeft = () => {
     navigation.navigate('GardenLeftSolo');
   }
 
   navigateToGardenRight = () => {
-    navigation.navigate('GardenRight');
+    navigation.navigate('GardenRightSoloT2');
   }
-
   navigateToMarket = () => {
-    navigation.navigate('Market')
+    navigation.navigate('Market');
   }
-  const images = [
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box31.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box32.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box33.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box34.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box35.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box36.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box37.png'),
-    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box38.png'),
 
+  const images = [
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box17.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box18.png'),
+    require('/Users/blainekwells/Desktop/Arbor/assets/images/Boxes/box19.png'),
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -61,7 +54,9 @@ const Town = ({navigation}) => {
 
   return (
     <ImageBackground style={styles.container} source = {require('/Users/blainekwells/Desktop/Arbor/assets/images/Backgrounds/TownBackground.jpg')} resizeMode="cover">
-      <Image style = {styles.market} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Market.gif')} />
+      <TouchableOpacity activeOpacity = {1} onPress = {navigateToMarket}>
+        <Image style = {styles.market} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Market.gif')} />
+      </TouchableOpacity>
         <Image style = {styles.house} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/House.gif')} />
       <TouchableOpacity activeOpacity = {1} onPress = {navigateToNewMail}>
         <Image style = {styles.office} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Office.gif')}/>
@@ -72,7 +67,7 @@ const Town = ({navigation}) => {
       <Image style = {styles.farmer} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/OldMan.gif')}/>
       <Image style = {styles.base} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Base.gif')}/>
 
-      <TouchableOpacity activeOpacity = {1} onPress = {navigateToGardenLeftSolo}>
+      <TouchableOpacity activeOpacity = {1} onPress = {navigateToGardenLeft}>
         <Image style = {styles.gardenLeft} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Left.gif')}/>
       </TouchableOpacity>
 
@@ -80,9 +75,7 @@ const Town = ({navigation}) => {
         <Image style = {styles.gardenRight} source ={require('/Users/blainekwells/Desktop/Arbor/assets/images/GIFs/Right.gif')}/>
       </TouchableOpacity>
 
-      
-
-        {!endOfImages && (
+      {!endOfImages && (
         <TouchableOpacity onPress={handleImageChange} style={styles.cyclingImage}>
         <Image
           style={styles.cyclingImage}
@@ -90,7 +83,7 @@ const Town = ({navigation}) => {
         />
       </TouchableOpacity>
       )}
-
+      
     </ImageBackground>
   );
 };
@@ -105,7 +98,6 @@ const styles = StyleSheet.create({
       flexDirection: 'row',
       paddingTop: 100,
       position: 'relative',
-    
     },
     house: {
       height: 200,
@@ -138,11 +130,11 @@ const styles = StyleSheet.create({
       top: -10,
     },
     farmer: {
-      height: 95,
-      width: 95,
+      height: 90,
+      width: 90,
       zIndex: 2,
-      bottom: 520,
-      left: 35,
+      bottom: 695,
+      left: 60,
       position: 'relative',
     },
     left: {
@@ -160,18 +152,17 @@ const styles = StyleSheet.create({
       left: 160,
     },
     base: {
-      height: 95,
-      width: 95,
+      height: 90,
+      width: 90,
       zIndex: 2,
-      bottom: 612,
-      right: 45,
+      bottom: 600,
       position: 'relative',
     },
     gardenLeft: {
       height: 80,
       width: 80,
       zIndex: 2,
-      bottom: 645,
+      bottom: 637,
       right: 160,
       position: 'relative',
     },
@@ -179,16 +170,8 @@ const styles = StyleSheet.create({
       height: 80,
       width: 80,
       zIndex: 2,
-      bottom: 730,
+      bottom: 725,
       left: 160,
-      position: 'relative',
-    },
-    notification: {
-      height: 90,
-      width: 90,
-      zIndex: 2,
-      bottom: 920,
-      right: 156,
       position: 'relative',
     },
     cyclingImage: {
@@ -196,7 +179,7 @@ const styles = StyleSheet.create({
       width: 300,  
       position: 'absolute',
       zIndex: 20,
-      top: 90,
+      top: 225,
     },
 });
 

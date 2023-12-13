@@ -9,10 +9,15 @@ const Music = ( {route, navigation} ) => {
     'Original': require('/Users/blainekwells/Desktop/Arbor/assets/fonts/rainyhearts.ttf'),
   });
 
-  const emotions = route.params;
+  const emotions = route.params ? route.params.emotions : '';
+  const people = route.params ? route.params.people : '';
+  const description = route.params ? route.params.description : '';
+  const memoryName = route.params ? route.params.memoryName : '';
+  const selectedMedia = route.params ? route.params.selectedMedia : '';
+
   // next screen
   const navigateToReview = () => {
-    navigation.navigate('GardenRightTaskComplete');
+    navigation.navigate('Review', { emotions: emotions, people: people, description: description, memoryName: memoryName, selectedMedia: selectedMedia });
   };
 
   // previous screen

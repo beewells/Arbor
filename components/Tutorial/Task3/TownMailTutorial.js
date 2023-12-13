@@ -26,11 +26,11 @@ const Town = ({navigation}) => {
   }
 
   navigateToGardenLeftSolo = () => {
-    navigation.navigate('GardenLeftSolo');
+    navigation.navigate('GardenLeftT3');
   }
 
   navigateToGardenRight = () => {
-    navigation.navigate('GardenRight');
+    navigation.navigate('GardenRightT3');
   }
 
   navigateToMarket = () => {
